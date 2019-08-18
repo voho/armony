@@ -11,13 +11,16 @@ export interface KeyedScalesChartWithCommonChordsProps {
 export const KeyedScalesChartWithCommonChords: React.FC<KeyedScalesChartWithCommonChordsProps> = (props) => {
     return (
         <div>
-            <KeyedScaleChart scale={props.scale1}/>
-            {getAllCommonChords(props.scale1, props.scale2)
-                .map(scale => {
-                    return (
-                        <KeyedScaleChart scale={scale}/>
-                    );
-                })}
+            <div className="row">
+                {getAllCommonChords(props.scale1, props.scale2)
+                    .map(scale => {
+                        return (
+                            <div className="col-3">
+                                <KeyedScaleChart scale={scale}/>
+                            </div>
+                        );
+                    })}
+            </div>
         </div>
     );
 };

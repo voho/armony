@@ -1,9 +1,27 @@
 import {Scale} from "./elements";
 
+/**
+ * Sources
+ * =======
+ *
+ * https://lotusmusic.com/lm_exoticscales.html
+ */
+
 export const MAJOR_SCALE = new Scale("Major", [2, 2, 1, 2, 2, 2, 1]);
 export const MINOR_SCALE = new Scale("Minor", [2, 1, 2, 2, 1, 2, 2]);
 export const WHOLETONE_SCALE = new Scale("Wholetone", [2, 2, 2, 2, 2]);
+export const HUNGARIAN = new Scale("Hungarian", [1, 3, 3, 1, 3, 1]);
+export const GYPSY = new Scale("Gypsy", [1, 3, 1, 3, 1, 3, 1]);
+export const BYZANTINE = new Scale("Byzantine", [2, 3, 1, 2, 1, 3, 1]);
+export const HINDU = new Scale("Hindu", [2, 2, 1, 2, 1, 2, 2]);
+export const ARABIAN = new Scale("Arabian", [2, 2, 1, 1, 2, 2, 2]);
+export const ORIENTAL = new Scale("Oriental", [1, 3, 1, 1, 3, 1, 2]);
+export const JAVANESE = new Scale("Javanese", [2, 2, 2, 1, 1, 2, 2]);
+export const IN_SEN = new Scale("In Sen", [1, 2 + 2, 2, 2 + 1, 2]);
+export const IWATO = new Scale("Iwato", [1, 2 + 2, 1, 2 + 2, 2]);
+export const BALINESE = new Scale("Balinese", [1, 2, 2 + 2, 1, 2 + 2]);
 
 export const ALL_SCALES = [
-    MAJOR_SCALE, MINOR_SCALE, WHOLETONE_SCALE
+    MAJOR_SCALE, MINOR_SCALE, WHOLETONE_SCALE,
+    HUNGARIAN, GYPSY, BYZANTINE, HINDU, ARABIAN, ORIENTAL, JAVANESE, IN_SEN, IWATO, BALINESE
 ];
