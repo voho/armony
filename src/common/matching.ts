@@ -3,7 +3,7 @@ import {KeyedScale} from "./elements";
 
 function containsAllPitches(scalePitches: number[], chordPitches: number[]) {
     for (let i = 0; i < chordPitches.length; i++) {
-        if (!scalePitches.includes(chordPitches[i] % 12)) {
+        if (!scalePitches.includes(chordPitches[i])) {
             return false;
         }
     }

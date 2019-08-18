@@ -11,6 +11,12 @@ export const A = 9;
 export const AIS = 10;
 export const B = 11;
 
+export function getPitchWithOctave(index: number, octave: number): string {
+    const pitch = getPitch(index);
+    const octaveFixed = octave + (index / 12);
+    return pitch + octaveFixed;
+}
+
 export function getPitch(index: number): string {
     switch (index % 12) {
         case 0:
