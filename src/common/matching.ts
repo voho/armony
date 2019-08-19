@@ -2,12 +2,10 @@ import {ALL_CHORDS} from "./chords";
 import {KeyedScale} from "./elements";
 
 function containsAllPitches(scalePitches: number[], chordPitches: number[]) {
-    for (let i = 0; i < chordPitches.length; i++) {
-        if (!scalePitches.includes(chordPitches[i])) {
-            return false;
-        }
-    }
-    return true;
+    const scalePitchesNormalized = scalePitches.map(a => a % 12);
+    const chordPitchesNormalized = chordPitches.map(a => a % 12);
+    const chordPitchesNotInScale = chordPitchesNormalized.filter(a => !scalePitchesNormalized.includes(a));
+    return chordPitchesNotInScale.length > 0;
 }
 
 export function getAllMatchingChords(scale: KeyedScale): KeyedScale[] {

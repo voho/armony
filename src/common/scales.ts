@@ -5,6 +5,7 @@ import {Scale} from "./elements";
  * =======
  *
  * https://lotusmusic.com/lm_exoticscales.html
+ * https://guitarsix.com/blog/lessons/piano-chords/241/1/
  */
 
 export const MAJOR_SCALE = new Scale("Major", [2, 2, 1, 2, 2, 2, 1]);
