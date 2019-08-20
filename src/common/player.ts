@@ -9,11 +9,12 @@ function playAsChord(scale: KeyedScale) {
 }
 
 function playAsScale(scale: KeyedScale) {
-    playAsHuman(scale, 0.1);
+    playAsHuman(scale, 0.07);
 }
 
 function playAsHuman(scale: KeyedScale, time: number) {
     Tone.Transport.stop(0);
+    Tone.Transport.start(0);
     const pitches = scale.generate();
 
     for (let i = 0; i < pitches.length; i++) {
@@ -23,8 +24,6 @@ function playAsHuman(scale: KeyedScale, time: number) {
         synth.triggerAttack([name], "+" + is);
         synth.triggerRelease([name], "+" + ie);
     }
-
-    Tone.Transport.start(0);
 }
 
 export function play(scale: KeyedScale) {

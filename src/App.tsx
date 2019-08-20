@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter, Route} from "react-router-dom";
 import ChordsInScaleFeature from "./feature/ChordsInScaleFeature";
 import CommonChordsForScales from "./feature/CommonChordsForScales";
+import HomeFeature from "./feature/HomeFeature";
 
 export default class App extends React.Component {
     render() {
@@ -22,8 +23,9 @@ export default class App extends React.Component {
                         </div>
                     </nav>
                     <BrowserRouter>
-                        <Route path="/scale-to-chords" component={ChordsInScaleFeature}/>
-                        <Route path="/common-chords" component={CommonChordsForScales}/>
+                        <Route exact path="/scale-to-chords" component={ChordsInScaleFeature}/>
+                        <Route exact path="/common-chords" component={CommonChordsForScales}/>
+                        <Route exact path="/" component={HomeFeature}/>
                     </BrowserRouter>
                 </div>
             </div>

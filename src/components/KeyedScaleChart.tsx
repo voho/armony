@@ -8,14 +8,19 @@ export interface KeyedScaleChartProps {
 }
 
 export const KeyedScaleChart: React.FC<KeyedScaleChartProps> = (props) => {
+    const badges = "badge badge-" + props.scale.getScale().getType();
     return (
         <div className="card mb-3">
-            <div className="card-header row">
-                <div className="col-auto">
-                    <h6>{getPitch(props.scale.getRoot())} <span className="badge badge-info">{props.scale.getScale().getName()}</span></h6>
-                </div>
-                <div className="col text-right">
-                    <button className="btn btn btn-outline-secondary btn-sm" onClick={() => play(props.scale)}>Play</button>
+            <div className="card-header">
+                <div className="row">
+                    <div className="col-auto">
+                        <h6>{getPitch(props.scale.getRoot())} <span className={badges}>{props.scale.getScale().getName()}</span></h6>
+                    </div>
+                    <div className="col text-right">
+                        <button className="btn btn-outline-secondary btn-sm" onClick={() => play(props.scale)}>
+                            <small>Play</small>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="card-body">

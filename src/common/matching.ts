@@ -5,7 +5,7 @@ function containsAllPitches(scalePitches: number[], chordPitches: number[]) {
     const scalePitchesNormalized = scalePitches.map(a => a % 12);
     const chordPitchesNormalized = chordPitches.map(a => a % 12);
     const chordPitchesNotInScale = chordPitchesNormalized.filter(a => !scalePitchesNormalized.includes(a));
-    return chordPitchesNotInScale.length > 0;
+    return chordPitchesNotInScale.length === 0;
 }
 
 export function getAllMatchingChords(scale: KeyedScale): KeyedScale[] {
@@ -21,6 +21,7 @@ export function getAllMatchingChords(scale: KeyedScale): KeyedScale[] {
             }
         });
     }
+    sort(result);
     return result;
 }
 
@@ -38,5 +39,12 @@ export function getAllCommonChords(scale1: KeyedScale, scale2: KeyedScale): Keye
             }
         });
     }
+    sort(result);
     return result;
+}
+
+function sort(result: KeyedScale[]) {
+    result.sort((a, b) => {
+        return a < b ? -1 : a > b ? 1 : 0;
+    });
 }

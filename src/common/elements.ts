@@ -13,6 +13,10 @@ export class Scale {
         return this.name;
     }
 
+    getType(): string {
+        return "default";
+    }
+
     getSize(): number {
         return this.steps.length + 1;
     }
@@ -31,6 +35,22 @@ export class Scale {
         }
 
         return result;
+    }
+}
+
+export class Chord extends Scale {
+    getType(): string {
+        return "primary";
+    }
+}
+
+export class Interval extends Chord {
+    getName(): string {
+        return "Interval " + super.getName();
+    }
+
+    getType(): string {
+        return "secondary";
     }
 }
 
