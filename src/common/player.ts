@@ -1,8 +1,8 @@
+import Tone from "tone";
 import {KeyedScale} from "./elements";
 import {getPitchWithOctave} from "./pitch";
-import Tone from "tone";
 
-var synth = new Tone.PolySynth(6, Tone.FMSynth).toMaster();
+const synth = new Tone.PolySynth(6, Tone.FMSynth).toMaster();
 
 function playAsChord(scale: KeyedScale) {
     playAsHuman(scale, 0.01);
