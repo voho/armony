@@ -44,7 +44,15 @@ export function getAllCommonChords(scale1: KeyedScale, scale2: KeyedScale): Keye
 }
 
 function sort(result: KeyedScale[]) {
-    result.sort((a, b) => {
-        return a < b ? -1 : a > b ? 1 : 0;
+    result.sort((a: KeyedScale, b: KeyedScale) => {
+        const t1 = a.getScale().getSize();
+        const t2 = b.getScale().getSize();
+        if (t1 < t2) {
+            return 1;
+        } else if (t2 < t1) {
+            return -1;
+        } else {
+            return a.getName() < b.getName() ? -1 : a.getName() > b.getName() ? 1 : 0;
+        }
     });
 }

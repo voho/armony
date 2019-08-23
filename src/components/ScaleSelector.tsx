@@ -1,5 +1,4 @@
 import React from "react";
-import {Button} from "reactstrap";
 import {Scale} from "../common/elements";
 import {getPitch} from "../common/pitch";
 import {ALL_SCALES} from "../common/scales";
@@ -42,32 +41,29 @@ export class ScaleSelector extends React.Component<ScaleSelectorProps> {
             <div>
                 <div className="row align-items-start justify-content-start">
                     <div className="col-auto">
-                        <p className="btn-group btn-group-toggle">
+                        <p className="btn-group-sm">
                             {pitches.map(pitch => {
-                                const classes = this.isPitchSelected(pitch) ? "active btn btn-default btn-sm" : "btn btn-default btn-sm";
-                                return <Button className={classes}
-                                    onClick={this.handleOnKeyClick.bind(this, pitch)}>{getPitch(pitch)}</Button>;
+                                const classes1 = this.isPitchSelected(pitch) ? "active btn btn-secondary btn-sm m-1" : "btn btn-secondary btn-sm m-1";
+                                return <button className={classes1}
+                                               onClick={this.handleOnKeyClick.bind(this, pitch)}>{getPitch(pitch)}</button>;
                             })}
                         </p>
-                    </div>
-                    <div className="col-auto">
-                        <div className="dropdown">
-                            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Scale
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                {ALL_SCALES.map(scale => {
-                                    const classes = this.isScaleSelected(scale) ? "active btn btn-info btn-sm" : "btn btn-info btn-sm";
-                                    return <a className="dropdown-item" onClick={this.handleOnScaleClick.bind(this, scale)} href="#">{scale.getName()}</a>;
-                                })}
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className="row align-items-start justify-content-start">
                     <div className="col-auto">
-                        {this.props.selectedScale !== undefined && this.props.selectedKey !== undefined &&
-                        <KeyedScaleChart scale={this.props.selectedScale!.withKey(this.props.selectedKey!)}/>}
+                        <p className="btn-group-sm">
+                            {ALL_SCALES.map(scale => {
+                                const classes2 = this.isScaleSelected(scale) ? "active btn btn-primary btn-sm m-1" : "btn btn-primary btn-sm m-1";
+                                return <button className={classes2}
+                                               onClick={this.handleOnScaleClick.bind(this, scale)}>{scale.getName()}</button>;
+                            })}
+                        </p>
+                    </div>
+                </div>
+                <div className="row align-items-start justify-content-start">
+                    <div className="col-auto">
+                        {this.props.selectedScale !== undefined && this.props.selectedKey !== undefined && <KeyedScaleChart scale={this.props.selectedScale!.withKey(this.props.selectedKey!)}/>}
                     </div>
                 </div>
             </div>
