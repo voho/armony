@@ -3,12 +3,12 @@ import {KeyedScale} from "../common/elements";
 import {getAllCommonChords} from "../common/matching";
 import {KeyedScaleChart} from "./KeyedScaleChart";
 
-export interface KeyedScalesChartWithCommonChordsProps {
+type Props = {
     scale1: KeyedScale,
     scale2: KeyedScale
 }
 
-export const KeyedScalesChartWithCommonChords: React.FC<KeyedScalesChartWithCommonChordsProps> = (props) => {
+export const KeyedScalesChartWithCommonChords: React.FC<Props> = (props) => {
     return (
         <div>
             <div className="row">

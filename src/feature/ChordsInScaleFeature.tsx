@@ -4,7 +4,7 @@ import {IONIAN_SCALE} from "../common/scales";
 import {KeyedScaleChartWithChords} from "../components/KeyedScaleChartWithChords";
 import {ScaleSelector} from "../components/ScaleSelector";
 
-export const ChordsInScaleFeature = () => {
+export const ChordsInScaleFeature: React.FC = () => {
     const [pitch, setPitch] = useState(C);
     const [scale, setScale] = useState(IONIAN_SCALE);
 

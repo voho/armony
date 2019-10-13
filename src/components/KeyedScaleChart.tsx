@@ -3,17 +3,18 @@ import {KeyedScale} from "../common/elements";
 import {getPitch, isBlack} from "../common/pitch";
 import {play} from "../common/player";
 
-export interface KeyedScaleChartProps {
+type Props = {
     scale: KeyedScale
 }
 
-export const KeyedScaleChart: React.FC<KeyedScaleChartProps> = (props) => {
+export const KeyedScaleChart: React.FC<Props> = (props) => {
     return (
         <div className="card m-2">
             <div className="card-body">
                 <div className="row no-gutters">
                     <div className="col-10 p-1">
                         <b>{getPitch(props.scale.getRoot())}</b>
+                        {" "}
                         <small>{props.scale.getScale().getName()}</small>
                     </div>
                     <div className="col-2 p-1 text-right">

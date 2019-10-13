@@ -4,7 +4,7 @@ import {DORIAN_SCALE, IONIAN_SCALE} from "../common/scales";
 import {KeyedScalesChartWithCommonChords} from "../components/KeyedScalesChartWithCommonChords";
 import {ScaleSelector} from "../components/ScaleSelector";
 
-export const CommonChordsForScales = () => {
+export const CommonChordsForScales: React.FC = () => {
     const [pitch1, setPitch1] = useState(C);
     const [pitch2, setPitch2] = useState(C);
     const [scale1, setScale1] = useState(IONIAN_SCALE);
