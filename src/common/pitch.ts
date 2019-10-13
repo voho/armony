@@ -19,29 +19,29 @@ export function getPitchWithOctave(index: number, octave: number): string {
 
 export function getPitch(index: number): string {
     switch (index % 12) {
-        case 0:
+        case C:
             return "C";
-        case 1:
+        case CIS:
             return "C#";
-        case 2:
+        case D:
             return "D";
-        case 3:
+        case DIS:
             return "D#";
-        case 4:
+        case E:
             return "E";
-        case 5:
+        case F:
             return "F";
-        case 6:
+        case FIS:
             return "F#";
-        case 7:
+        case G:
             return "G";
-        case 8:
+        case GIS:
             return "G#";
-        case 9:
+        case A:
             return "A";
-        case 10:
+        case AIS:
             return "A#";
-        case 11:
+        case B:
             return "B";
         default:
             throw new Error("Invalid pitch");
@@ -49,5 +49,5 @@ export function getPitch(index: number): string {
 }
 
 export function isBlack(index: number): boolean {
-    return [1, 3, 6, 8, 10].includes(index % 12);
+    return [CIS, DIS, FIS, GIS, AIS].includes(index % 12);
 }

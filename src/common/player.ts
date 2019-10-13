@@ -12,17 +12,17 @@ function playAsScale(scale: KeyedScale) {
     playAsHuman(scale, 0.07);
 }
 
-function playAsHuman(scale: KeyedScale, time: number) {
+function playAsHuman(scale: KeyedScale, timeFactor: number) {
     Tone.Transport.stop(0);
     Tone.Transport.start(0);
     const pitches = scale.generate();
 
     for (let i = 0; i < pitches.length; i++) {
-        const is = i * time;
-        const ie = is + time;
+        const iStartTime = i * timeFactor;
+        const iEndTime = iStartTime + timeFactor;
         const name = getPitchWithOctave(pitches[i], 4);
-        synth.triggerAttack([name], "+" + is);
-        synth.triggerRelease([name], "+" + ie);
+        synth.triggerAttack([name], "+" + iStartTime);
+        synth.triggerRelease([name], "+" + iEndTime);
     }
 }
 

@@ -4,7 +4,6 @@ import {C} from "../common/pitch";
 import {IONIAN_SCALE} from "../common/scales";
 import {KeyedScaleChartWithChords} from "../components/KeyedScaleChartWithChords";
 import {ScaleSelector} from "../components/ScaleSelector";
-import HomeFeature from "./HomeFeature";
 
 interface ChordsInScaleFeatureState {
     pitch: number,
@@ -45,8 +44,6 @@ export default class ChordsInScaleFeature extends React.Component<{}, ChordsInSc
                 <h3>Chords in selected scale</h3>
 
                 <KeyedScaleChartWithChords scale={this.state.scale.withKey(this.state.pitch)}/>
-
-                <HomeFeature/>
             </div>
         );
     }

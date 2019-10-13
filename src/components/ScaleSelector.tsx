@@ -44,7 +44,8 @@ export class ScaleSelector extends React.Component<ScaleSelectorProps> {
                         <p className="btn-group-sm">
                             {pitches.map(pitch => {
                                 const classes1 = this.isPitchSelected(pitch) ? "active btn btn-secondary btn-sm m-1" : "btn btn-secondary btn-sm m-1";
-                                return <button className={classes1}
+                                return <button key={pitch}
+                                               className={classes1}
                                                onClick={this.handleOnKeyClick.bind(this, pitch)}>{getPitch(pitch)}</button>;
                             })}
                         </p>
@@ -55,7 +56,8 @@ export class ScaleSelector extends React.Component<ScaleSelectorProps> {
                         <p className="btn-group-sm">
                             {ALL_SCALES.map(scale => {
                                 const classes2 = this.isScaleSelected(scale) ? "active btn btn-primary btn-sm m-1" : "btn btn-primary btn-sm m-1";
-                                return <button className={classes2}
+                                return <button key={scale.getName()}
+                                               className={classes2}
                                                onClick={this.handleOnScaleClick.bind(this, scale)}>{scale.getName()}</button>;
                             })}
                         </p>

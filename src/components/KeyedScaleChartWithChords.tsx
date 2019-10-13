@@ -14,7 +14,7 @@ export const KeyedScaleChartWithChords: React.FC<KeyedScaleChartWithChordsProps>
                 {getAllMatchingChords(props.scale)
                     .map(scale => {
                         return (
-                            <div className="col-3">
+                            <div key={scale.getName()} className="col-3">
                                 <KeyedScaleChart scale={scale}/>
                             </div>
                         );

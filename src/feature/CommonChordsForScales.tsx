@@ -4,7 +4,6 @@ import {C, F} from "../common/pitch";
 import {DORIAN_SCALE, IONIAN_SCALE} from "../common/scales";
 import {KeyedScalesChartWithCommonChords} from "../components/KeyedScalesChartWithCommonChords";
 import {ScaleSelector} from "../components/ScaleSelector";
-import HomeFeature from "./HomeFeature";
 
 interface CommonChordsForScalesState {
     pitch1: number,
@@ -56,8 +55,6 @@ export default class CommonChordsForScales extends React.Component<{}, CommonCho
                 <KeyedScalesChartWithCommonChords
                     scale1={this.state.scale1.withKey(this.state.pitch1)}
                     scale2={this.state.scale2.withKey(this.state.pitch2)}/>
-
-                <HomeFeature/>
             </div>
         );
     }
