@@ -1,50 +1,32 @@
-import React from "react";
-import {Scale} from "../common/elements";
+import React, {useState} from "react";
 import {C} from "../common/pitch";
 import {IONIAN_SCALE} from "../common/scales";
 import {KeyedScaleChartWithChords} from "../components/KeyedScaleChartWithChords";
 import {ScaleSelector} from "../components/ScaleSelector";
 
-interface ChordsInScaleFeatureState {
-    pitch: number,
-    scale: Scale
-}
+export const ChordsInScaleFeature = () => {
+    const [pitch, setPitch] = useState(C);
+    const [scale, setScale] = useState(IONIAN_SCALE);
 
-export default class ChordsInScaleFeature extends React.Component<{}, ChordsInScaleFeatureState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            pitch: C,
-            scale: IONIAN_SCALE
-        };
-    }
+    return (
+        <section className="p-3">
+            <div className="jumbotron">
+                <p className="lead">Shows all chords in the selected scale.</p>
 
-    render() {
-        return (
-            <div>
-                <div className="jumbotron">
-                    <p className="lead">Shows all chords in the selected scale.</p>
+                <hr className="my-4"/>
 
-                    <hr className="my-4"/>
+                <h3>Select Scale</h3>
 
-                    <h3>Select Scale</h3>
-
-                    <ScaleSelector
-                        selectedKey={this.state.pitch}
-                        selectedScale={this.state.scale}
-                        onKeyChange={(pitch) => {
-                            this.setState({pitch: pitch});
-                        }}
-                        onScaleChange={(scale) => {
-                            this.setState({scale: scale});
-                        }}/>
-
-                </div>
-
-                <h3>Chords in selected scale</h3>
-
-                <KeyedScaleChartWithChords scale={this.state.scale.withKey(this.state.pitch)}/>
+                <ScaleSelector
+                    selectedKey={pitch}
+                    selectedScale={scale}
+                    onKeyChange={(pitch) => setPitch(pitch)}
+                    onScaleChange={(scale) => setScale(scale)}/>
             </div>
-        );
-    }
+
+            <h3>Chords in selected scale</h3>
+
+            <KeyedScaleChartWithChords scale={scale.withKey(pitch)}/>
+        </section>
+    );
 };

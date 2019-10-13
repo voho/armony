@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Link, Redirect, Route} from "react-router-dom";
-import ChordsInScaleFeature from "./feature/ChordsInScaleFeature";
-import CommonChordsForScales from "./feature/CommonChordsForScales";
+import {CommonChordsForScales} from "./feature/CommonChordsForScales";
+import {ChordsInScaleFeature} from "./feature/ChordsInScaleFeature";
 
 export default class App extends React.Component {
     render() {
