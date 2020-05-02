@@ -1,6 +1,6 @@
 import React from "react";
 import {Scale} from "../common/elements";
-import {getPitch} from "../common/pitch";
+import {getPitch, PITCHES} from "../common/pitch";
 import {ALL_SCALES} from "../common/scales";
 import {KeyedScaleChart} from "./KeyedScaleChart";
 
@@ -12,8 +12,6 @@ type Props = {
 }
 
 export const ScaleSelector: React.FC<Props> = (props) => {
-    const pitches: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
     function isPitchSelected(pitch: number) {
         if (props.selectedKey === undefined) {
             return false;
@@ -33,7 +31,7 @@ export const ScaleSelector: React.FC<Props> = (props) => {
             <div className="row align-items-start justify-content-start">
                 <div className="col-auto">
                     <p className="btn-group-sm">
-                        {pitches.map(pitch => {
+                        {PITCHES.map(pitch => {
                             const classes1 = isPitchSelected(pitch) ? "active btn btn-secondary btn-sm m-1" : "btn btn-secondary btn-sm m-1";
                             return <button key={pitch}
                                            className={classes1}
@@ -56,7 +54,8 @@ export const ScaleSelector: React.FC<Props> = (props) => {
             </div>
             <div className="row align-items-start justify-content-start">
                 <div className="col-auto">
-                    {props.selectedScale !== undefined && props.selectedKey !== undefined && <KeyedScaleChart scale={props.selectedScale!.withKey(props.selectedKey!)}/>}
+                    {props.selectedScale !== undefined && props.selectedKey !== undefined &&
+                    <KeyedScaleChart scale={props.selectedScale!.withKey(props.selectedKey!)}/>}
                 </div>
             </div>
         </section>

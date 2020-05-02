@@ -36,7 +36,7 @@ export const CommonChordsForScales: React.FC = () => {
                     onScaleChange={(scale) => setScale2(scale)}/>
             </div>
 
-            <h3>Chords in both selected scale</h3>
+            <h3>Chords in both selected scales</h3>
 
             <KeyedScalesChartWithCommonChords
                 scale1={scale1.withKey(pitch1)}

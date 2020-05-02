@@ -1,4 +1,5 @@
 import * as React from "react";
+import {useState} from "react";
 import {KeyedScale} from "../common/elements";
 import {getPitch, isBlack} from "../common/pitch";
 import {play} from "../common/player";
@@ -8,8 +9,16 @@ type Props = {
 }
 
 export const KeyedScaleChart: React.FC<Props> = (props) => {
+    const [playing, setPlaying] = useState(false);
+
+    function playScale() {
+        setPlaying(true);
+        play(props.scale);
+        setTimeout(() => setPlaying(false), 200);
+    }
+
     return (
-        <div className="card m-2">
+        <div className={"card m-2" + (props.scale.getScale().getType()==='secondary' ? " " : " bg-light")+ (playing ? " border-primary" : " ")}>
             <div className="card-body">
                 <div className="row no-gutters">
                     <div className="col-10 p-1">
@@ -18,7 +27,7 @@ export const KeyedScaleChart: React.FC<Props> = (props) => {
                         <small>{props.scale.getScale().getName()}</small>
                     </div>
                     <div className="col-2 p-1 text-right">
-                        <button className="btn btn-sm" onClick={() => play(props.scale)}>
+                        <button className="btn btn-sm" disabled={playing} onClick={() => playScale()}>
                             <small>&#9654;</small>
                         </button>
                     </div>

@@ -1,7 +1,8 @@
 import {ALL_CHORDS} from "./chords";
 import {KeyedScale} from "./elements";
+import {Pitch} from "./pitch";
 
-function containsAllPitches(scalePitches: number[], chordPitches: number[]) {
+function containsAllPitches(scalePitches: Pitch[], chordPitches: Pitch[]) {
     const scalePitchesNormalized = scalePitches.map(a => a % 12);
     const chordPitchesNormalized = chordPitches.map(a => a % 12);
     const chordPitchesNotInScale = chordPitchesNormalized.filter(a => !scalePitchesNormalized.includes(a));
@@ -35,6 +36,22 @@ export function getAllCommonChords(scale1: KeyedScale, scale2: KeyedScale): Keye
             const chordPitches = keyedChord.generate();
 
             if (containsAllPitches(scale1Pitches, chordPitches) && containsAllPitches(scale2Pitches, chordPitches)) {
+                result.push(keyedChord);
+            }
+        });
+    }
+    sort(result);
+    return result;
+}
+
+export function getAllMatchingChordsWithPitches(pitches: number[]): KeyedScale[] {
+    const result: KeyedScale[] = [];
+    for (let root = 0; root < 12; root++) {
+        ALL_CHORDS.forEach(chord => {
+            let keyedChord = chord.withKey(root);
+            const chordPitches = keyedChord.generate();
+
+            if (containsAllPitches(pitches, chordPitches)) {
                 result.push(keyedChord);
             }
         });

@@ -1,20 +1,18 @@
 import * as React from "react";
-import {KeyedScale} from "../common/elements";
-import {getAllCommonChords} from "../common/matching";
+import {getAllMatchingChordsWithPitches} from "../common/matching";
 import {KeyedScaleChart} from "./KeyedScaleChart";
 
 type Props = {
-    scale1: KeyedScale,
-    scale2: KeyedScale
+    pitches: number[]
 }
 
-export const KeyedScalesChartWithCommonChords: React.FC<Props> = (props) => {
-    const chords = getAllCommonChords(props.scale1, props.scale2);
+export const KeyedScalesChartWithSelectedNotes: React.FC<Props> = (props) => {
+    const chords = getAllMatchingChordsWithPitches(props.pitches);
 
     if (!chords || chords.length < 1) {
         return (
             <div className="alert alert-secondary" role="alert">
-                It is possible that these scales have no chords in common.
+                No results. Please make sure to select at least two notes.
             </div>
         );
     }

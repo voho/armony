@@ -1,17 +1,21 @@
-export const C = 0;
-export const CIS = 1;
-export const D = 2;
-export const DIS = 3;
-export const E = 4;
-export const F = 5;
-export const FIS = 6;
-export const G = 7;
-export const GIS = 8;
-export const A = 9;
-export const AIS = 10;
-export const B = 11;
+export type Pitch = number;
 
-export function getPitchWithOctave(index: number, octave: number): string {
+export const C = 0 as Pitch;
+export const CIS = 1 as Pitch;
+export const D = 2 as Pitch;
+export const DIS = 3 as Pitch;
+export const E = 4 as Pitch;
+export const F = 5 as Pitch;
+export const FIS = 6 as Pitch;
+export const G = 7 as Pitch;
+export const GIS = 8 as Pitch;
+export const A = 9 as Pitch;
+export const AIS = 10 as Pitch;
+export const B = 11 as Pitch;
+
+export const PITCHES = Array.from(Array(12).keys()) as Pitch[];
+
+export function getPitchWithOctave(index: Pitch, octave: number): string {
     const pitch = getPitch(index);
     const octaveFixed = octave + (index / 12);
     return pitch + octaveFixed;

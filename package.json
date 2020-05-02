@@ -1,5 +1,5 @@
 {
-  "name": "armony",
+  "name": "@voho/armony",
   "version": "0.1.0",
   "dependencies": {
     "bootstrap": "^4.3.1",
