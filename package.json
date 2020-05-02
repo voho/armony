@@ -18,14 +18,20 @@
     "@types/react-router-dom": "^4.3.4",
     "@types/tone": "git://github.com/Tonejs/TypeScript.git"
   },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "http://voho.github.io/armony",
   "browserslist": {
     "production": [
       ">0.2%",

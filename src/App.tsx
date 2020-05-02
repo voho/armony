@@ -7,21 +7,21 @@ import {CommonChordsForScales} from "./feature/CommonChordsForScales";
 export const App: React.FC = () => {
     return (
         <div className="App">
-            <BrowserRouter>
+            <BrowserRouter basename="armony">
                 <nav className="navbar navbar-expand navbar-dark bg-dark">
                     <div className="container">
-                    <a className="navbar-brand" href="/">🎹 Armony</a>
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/scale-to-chords">Scale to Chords</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/notes-to-chords">Notes to Chords</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/common-chords">Common Chords</NavLink>
-                        </li>
-                    </ul>
+                        <a className="navbar-brand" href="/">🎹 Armony</a>
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/scale-to-chords">Scale to Chords</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/notes-to-chords">Notes to Chords</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/common-chords">Common Chords</NavLink>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
                 <div className="container">
