@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/armony-pages/static/js/main.30089a6d.chunk.js",
-    "main.js.map": "/armony-pages/static/js/main.30089a6d.chunk.js.map",
-    "runtime~main.js": "/armony-pages/static/js/runtime~main.da081387.js",
-    "runtime~main.js.map": "/armony-pages/static/js/runtime~main.da081387.js.map",
-    "static/css/2.266e55a5.chunk.css": "/armony-pages/static/css/2.266e55a5.chunk.css",
-    "static/js/2.df2bf3b1.chunk.js": "/armony-pages/static/js/2.df2bf3b1.chunk.js",
-    "static/js/2.df2bf3b1.chunk.js.map": "/armony-pages/static/js/2.df2bf3b1.chunk.js.map",
-    "index.html": "/armony-pages/index.html",
-    "precache-manifest.12ae97adaad28a1bba2a6fbdd16e4313.js": "/armony-pages/precache-manifest.12ae97adaad28a1bba2a6fbdd16e4313.js",
-    "service-worker.js": "/armony-pages/service-worker.js",
-    "static/css/2.266e55a5.chunk.css.map": "/armony-pages/static/css/2.266e55a5.chunk.css.map"
+    "main.js": "/armony/static/js/main.30089a6d.chunk.js",
+    "main.js.map": "/armony/static/js/main.30089a6d.chunk.js.map",
+    "runtime~main.js": "/armony/static/js/runtime~main.99d32300.js",
+    "runtime~main.js.map": "/armony/static/js/runtime~main.99d32300.js.map",
+    "static/css/2.266e55a5.chunk.css": "/armony/static/css/2.266e55a5.chunk.css",
+    "static/js/2.df2bf3b1.chunk.js": "/armony/static/js/2.df2bf3b1.chunk.js",
+    "static/js/2.df2bf3b1.chunk.js.map": "/armony/static/js/2.df2bf3b1.chunk.js.map",
+    "index.html": "/armony/index.html",
+    "precache-manifest.487e686af39658522bf282bc9005d136.js": "/armony/precache-manifest.487e686af39658522bf282bc9005d136.js",
+    "service-worker.js": "/armony/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/armony/static/css/2.266e55a5.chunk.css.map"
   }
 }
