@@ -13,16 +13,17 @@ export const A = 9 as Pitch;
 export const AIS = 10 as Pitch;
 export const B = 11 as Pitch;
 
-export const PITCHES = Array.from(Array(12).keys()) as Pitch[];
+export const NUM_PITCHES = 12;
+export const PITCHES = Array.from(Array(NUM_PITCHES).keys()) as Pitch[];
 
 export function getPitchWithOctave(index: Pitch, octave: number): string {
     const pitch = getPitch(index);
-    const octaveFixed = octave + (index / 12);
+    const octaveFixed = octave + (index / NUM_PITCHES);
     return pitch + octaveFixed;
 }
 
 export function getPitch(index: number): string {
-    switch (index % 12) {
+    switch (index % NUM_PITCHES) {
         case C:
             return "C";
         case CIS:
@@ -53,5 +54,6 @@ export function getPitch(index: number): string {
 }
 
 export function isBlack(index: number): boolean {
-    return [CIS, DIS, FIS, GIS, AIS].includes(index % 12);
+    return [CIS, DIS, FIS, GIS, AIS].includes(index % NUM_PITCHES);
 }
+

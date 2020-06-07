@@ -9,10 +9,10 @@ type Props = {
 export const KeyedScalesChartWithSelectedNotes: React.FC<Props> = (props) => {
     const chords = getAllMatchingChordsWithPitches(props.pitches);
 
-    if (!chords || chords.length < 1) {
+    if (!chords || chords.length < 1 || props.pitches.length < 1) {
         return (
             <div className="alert alert-secondary" role="alert">
-                No results. Please make sure to select at least two notes.
+                No results. Please make sure to select at least one note.
             </div>
         );
     }

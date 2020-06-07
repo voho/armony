@@ -1,17 +1,17 @@
 import {ALL_CHORDS} from "./chords";
 import {KeyedScale} from "./elements";
-import {Pitch} from "./pitch";
+import {NUM_PITCHES, Pitch} from "./pitch";
 
 function containsAllPitches(scalePitches: Pitch[], chordPitches: Pitch[]) {
-    const scalePitchesNormalized = scalePitches.map(a => a % 12);
-    const chordPitchesNormalized = chordPitches.map(a => a % 12);
+    const scalePitchesNormalized = scalePitches.map(a => a % NUM_PITCHES);
+    const chordPitchesNormalized = chordPitches.map(a => a % NUM_PITCHES);
     const chordPitchesNotInScale = chordPitchesNormalized.filter(a => !scalePitchesNormalized.includes(a));
     return chordPitchesNotInScale.length === 0;
 }
 
 export function getAllMatchingChords(scale: KeyedScale): KeyedScale[] {
     const result: KeyedScale[] = [];
-    for (let root = 0; root < 12; root++) {
+    for (let root = 0; root < NUM_PITCHES; root++) {
         ALL_CHORDS.forEach(chord => {
             const scalePitches = scale.generate();
             let keyedChord = chord.withKey(root);
@@ -28,7 +28,7 @@ export function getAllMatchingChords(scale: KeyedScale): KeyedScale[] {
 
 export function getAllCommonChords(scale1: KeyedScale, scale2: KeyedScale): KeyedScale[] {
     const result: KeyedScale[] = [];
-    for (let root = 0; root < 12; root++) {
+    for (let root = 0; root < NUM_PITCHES; root++) {
         ALL_CHORDS.forEach(chord => {
             const scale1Pitches = scale1.generate();
             const scale2Pitches = scale2.generate();
@@ -46,12 +46,12 @@ export function getAllCommonChords(scale1: KeyedScale, scale2: KeyedScale): Keye
 
 export function getAllMatchingChordsWithPitches(pitches: number[]): KeyedScale[] {
     const result: KeyedScale[] = [];
-    for (let root = 0; root < 12; root++) {
+    for (let root = 0; root < NUM_PITCHES; root++) {
         ALL_CHORDS.forEach(chord => {
             let keyedChord = chord.withKey(root);
             const chordPitches = keyedChord.generate();
 
-            if (containsAllPitches(pitches, chordPitches)) {
+            if (containsAllPitches(chordPitches, pitches)) {
                 result.push(keyedChord);
             }
         });
