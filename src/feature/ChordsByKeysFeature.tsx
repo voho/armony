@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {getAllMatchingChordsWithPitches} from "../common/matching";
-import {Chords} from "../components/Chords";
+import {ChordList} from "../components/ChordList";
 import {NoteSelector} from "../components/NoteSelector";
 
 export const ChordsByKeysFeature: React.FC = () => {
@@ -20,7 +20,7 @@ export const ChordsByKeysFeature: React.FC = () => {
 
             <h3>Chords in selected scale</h3>
 
-            <Chords chords={getAllMatchingChordsWithPitches(selectedNotes)}/>
+            <ChordList chords={getAllMatchingChordsWithPitches(selectedNotes)}/>
         </section>
     );
 };

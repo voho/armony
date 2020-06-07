@@ -6,7 +6,7 @@ type Props = {
     chords: KeyedScale[]
 }
 
-export const Chords: React.FC<Props> = (props) => {
+export const ChordList: React.FC<Props> = (props) => {
     if (!props.chords || props.chords.length < 1) {
         return (
             <div className="alert alert-secondary" role="alert">

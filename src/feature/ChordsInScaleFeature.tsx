@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {getAllMatchingChords} from "../common/matching";
 import {C} from "../common/pitch";
 import {IONIAN_SCALE} from "../common/scales";
-import {Chords} from "../components/Chords";
+import {ChordList} from "../components/ChordList";
 import {ScaleSelector} from "../components/ScaleSelector";
 
 export const ChordsInScaleFeature: React.FC = () => {
@@ -27,7 +27,7 @@ export const ChordsInScaleFeature: React.FC = () => {
 
             <h3>Chords in selected scale</h3>
 
-            <Chords chords={getAllMatchingChords(scale.withKey(pitch))}/>
+            <ChordList chords={getAllMatchingChords(scale.withKey(pitch))}/>
         </section>
     );
 };

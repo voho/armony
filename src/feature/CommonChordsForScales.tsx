@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {getAllCommonChords} from "../common/matching";
 import {C} from "../common/pitch";
 import {DORIAN_SCALE, IONIAN_SCALE} from "../common/scales";
-import {Chords} from "../components/Chords";
+import {ChordList} from "../components/ChordList";
 import {ScaleSelector} from "../components/ScaleSelector";
 
 export const CommonChordsForScales: React.FC = () => {
@@ -39,7 +39,7 @@ export const CommonChordsForScales: React.FC = () => {
 
             <h3>Chords in both selected scales</h3>
 
-            <Chords chords={getAllCommonChords(scale1.withKey(pitch1), scale2.withKey(pitch2))}/>
+            <ChordList chords={getAllCommonChords(scale1.withKey(pitch1), scale2.withKey(pitch2))}/>
         </section>
     );
 };
