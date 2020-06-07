@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import {getAllMatchingChords} from "../common/matching";
 import {C} from "../common/pitch";
 import {IONIAN_SCALE} from "../common/scales";
-import {KeyedScaleChartWithChords} from "../components/KeyedScaleChartWithChords";
+import {Chords} from "../components/Chords";
 import {ScaleSelector} from "../components/ScaleSelector";
 
 export const ChordsInScaleFeature: React.FC = () => {
@@ -26,7 +27,7 @@ export const ChordsInScaleFeature: React.FC = () => {
 
             <h3>Chords in selected scale</h3>
 
-            <KeyedScaleChartWithChords scale={scale.withKey(pitch)}/>
+            <Chords chords={getAllMatchingChords(scale.withKey(pitch))}/>
         </section>
     );
 };

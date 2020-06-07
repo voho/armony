@@ -25,10 +25,6 @@ export const NoteSelector: React.FC<NoteSelectorProps> = (props) => {
         props.onNoteSelectionChange(Array.from(initialValue));
     }, []);
 
-    function refresh() {
-
-    }
-
     return (
         <section>
             <p>

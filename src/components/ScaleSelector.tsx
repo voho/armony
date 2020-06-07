@@ -2,7 +2,7 @@ import React from "react";
 import {Scale} from "../common/elements";
 import {getPitch, PITCHES} from "../common/pitch";
 import {ALL_SCALES} from "../common/scales";
-import {KeyedScaleChart} from "./KeyedScaleChart";
+import {ScaleChart} from "./ScaleChart";
 
 type Props = {
     selectedKey?: number,
@@ -55,7 +55,7 @@ export const ScaleSelector: React.FC<Props> = (props) => {
             <div className="row align-items-start justify-content-start">
                 <div className="col-auto">
                     {props.selectedScale !== undefined && props.selectedKey !== undefined &&
-                    <KeyedScaleChart scale={props.selectedScale!.withKey(props.selectedKey!)}/>}
+                    <ScaleChart scale={props.selectedScale!.withKey(props.selectedKey!)}/>}
                 </div>
             </div>
         </section>

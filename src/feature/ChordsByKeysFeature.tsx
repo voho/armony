@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {KeyedScalesChartWithSelectedNotes} from "../components/KeyedScalesChartWithSelectedNotes";
+import {getAllMatchingChordsWithPitches} from "../common/matching";
+import {Chords} from "../components/Chords";
 import {NoteSelector} from "../components/NoteSelector";
 
 export const ChordsByKeysFeature: React.FC = () => {
@@ -19,7 +20,7 @@ export const ChordsByKeysFeature: React.FC = () => {
 
             <h3>Chords in selected scale</h3>
 
-            <KeyedScalesChartWithSelectedNotes pitches={selectedNotes}/>
+            <Chords chords={getAllMatchingChordsWithPitches(selectedNotes)}/>
         </section>
     );
 };

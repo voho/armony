@@ -8,7 +8,7 @@ type Props = {
     scale: KeyedScale
 }
 
-export const KeyedScaleChart: React.FC<Props> = (props) => {
+export const ScaleChart: React.FC<Props> = (props) => {
     const [playing, setPlaying] = useState(false);
 
     function playScale() {
@@ -18,7 +18,8 @@ export const KeyedScaleChart: React.FC<Props> = (props) => {
     }
 
     return (
-        <div className={"card m-2" + (props.scale.getScale().getType()==='secondary' ? " " : " bg-light")+ (playing ? " border-primary" : " ")}>
+        <div
+            className={"card m-2" + (props.scale.getScale().getType() === "secondary" ? " " : " bg-light") + (playing ? " border-primary" : " ")}>
             <div className="card-body">
                 <div className="row no-gutters">
                     <div className="col-10 p-1">

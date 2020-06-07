@@ -69,7 +69,15 @@ function sort(result: KeyedScale[]) {
         } else if (t2 < t1) {
             return -1;
         } else {
-            return a.getName() < b.getName() ? -1 : a.getName() > b.getName() ? 1 : 0;
+            const r1 = a.getRoot();
+            const r2 = b.getRoot();
+            if (r1 < r2) {
+                return -1;
+            } else if (r2 < r1) {
+                return 1;
+            } else {
+                return a.getName() < b.getName() ? -1 : a.getName() > b.getName() ? 1 : 0;
+            }
         }
     });
 }
