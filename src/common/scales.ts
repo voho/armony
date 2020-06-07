@@ -30,8 +30,11 @@ export const IN_SEN = new Scale("In Sen", [1, 2 + 2, 2, 2 + 1, 2]);
 export const IWATO = new Scale("Iwato", [1, 2 + 2, 1, 2 + 2, 2]);
 export const BALINESE = new Scale("Balinese", [1, 2, 2 + 2, 1, 2 + 2]);
 
+export const CHROMATIC = new Scale("Chromatic (all)", [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+
 export const ALL_SCALES = [
     IONIAN_SCALE, PHRYGIAN_SCALE, DORIAN_SCALE, LYDIAN_SCALE, MIXOLYDIAN_SCALE, AEOLIAN_SCALE, LOCRIAN_SCALE,
     WHOLETONE_SCALE,
-    HUNGARIAN, GYPSY, BYZANTINE, HINDU, ARABIAN, ORIENTAL, JAVANESE, IN_SEN, IWATO, BALINESE
+    HUNGARIAN, GYPSY, BYZANTINE, HINDU, ARABIAN, ORIENTAL, JAVANESE, IN_SEN, IWATO, BALINESE,
+    CHROMATIC
 ];
