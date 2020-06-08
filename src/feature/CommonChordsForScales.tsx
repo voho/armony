@@ -16,8 +16,6 @@ export const CommonChordsForScales: React.FC = () => {
             <div className="jumbotron">
                 <p className="lead">Shows all chords that the two selected scales have in common.</p>
 
-                <hr className="my-4"/>
-
                 <h3>Select first scale</h3>
 
                 <ScaleSelector
@@ -25,8 +23,6 @@ export const CommonChordsForScales: React.FC = () => {
                     selectedScale={scale1}
                     onKeyChange={(pitch) => setPitch1(pitch)}
                     onScaleChange={(scale) => setScale1(scale)}/>
-
-                <hr className="my-4"/>
 
                 <h3>Select second scale</h3>
 

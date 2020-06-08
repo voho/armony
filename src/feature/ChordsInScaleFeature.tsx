@@ -14,8 +14,6 @@ export const ChordsInScaleFeature: React.FC = () => {
             <div className="jumbotron">
                 <p className="lead">Shows all chords in the selected scale.</p>
 
-                <hr className="my-4"/>
-
                 <h3>Select Scale</h3>
 
                 <ScaleSelector

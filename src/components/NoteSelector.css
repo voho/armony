@@ -1,0 +1,8 @@
+.selector-options-item {
+    flex-grow: 1;
+}
+
+.selector-options-item label {
+    font-size: 150%;
+    padding: 0 1em 0 1ex;
+}

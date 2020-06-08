@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+body {
+    background-color: #eeeeee;
+    color: #333333;
+    font-family: 'Asap Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+h1, h2, h3, p {
+    margin: 13pt 0 8pt 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 170%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+p {
+    margin: 5pt 0 3pt 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.lead {
+    font-size: 120%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+button {
+    background-color: white;
+    border: 1px solid #333333;
+    box-shadow: 0 1px 2px silver;
+    border-radius: 2px;
+    margin: 3pt;
+    padding: 3pt 5pt;
+}
+
+button.active {
+    background-color: blue;
+    color: white;
+}
+
+button:hover {
+    background-color: white;
+    border-color: blue;
+    box-shadow: 0 1px 5px gray;
+    color: blue;
+}
+
+.jumbotron {
+    background-color: #f6f6f6;
+    padding: 1em;
+    margin: 1ex 0;
+    border-radius: 5pt;
+    box-shadow: 0 1px 3px #ccc;
+}

@@ -1,0 +1,52 @@
+nav {
+    background-color: #111111;
+}
+
+nav .wrapper {
+    margin: 0 auto;
+    width: 90%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 130%;
+    font-weight: bold;
+    display: block;
+    margin: 8pt;
+    padding: 3pt 5pt;
+    text-decoration: none;
+}
+
+nav ul li a.misc {
+    background: none transparent;
+    color: silver;
+}
+
+nav ul li a.logo {
+    background: none transparent !important;
+    color: white;
+    font-size: 200%;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: blue;
+}
+
+nav ul li a.active {
+    background-color: blue;
+    color: white;
+}
